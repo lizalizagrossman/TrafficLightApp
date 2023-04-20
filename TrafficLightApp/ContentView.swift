@@ -35,15 +35,21 @@ struct ContentView: View {
                     .foregroundColor(.green)
                     .opacity(greenOpacity)
                     .overlay(Circle().stroke(Color.white, lineWidth: 3))
+            
             Spacer()
+            
             Button(action: changeColor ) {
                 Text(firstTimeTap ? "Start" : "Next")
                     .font(.title)
-                    .foregroundColor(.black)
+                    .foregroundColor(.white)
             }
-                .buttonStyle(.borderedProminent)
-                .tint(.white)
-                .controlSize(.large)
+                .frame(width: 200, height: 80)
+                .background(Color.blue)
+                .cornerRadius(20)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(Color.white, lineWidth: 4)
+                )
         }
     }
     
